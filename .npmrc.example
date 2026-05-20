@@ -1,5 +1,5 @@
 # Copy to .npmrc and set GITHUB_TOKEN (PAT with read:packages + write:packages).
 # Do not commit .npmrc — it is listed in .gitignore.
 
-@hungvong:registry=https://npm.pkg.github.com
+@tieuhungv:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}

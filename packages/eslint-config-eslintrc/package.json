@@ -1,5 +1,5 @@
 {
-  "name": "@hungvong/eslint-config-eslintrc",
+  "name": "@tieuhungv/eslint-config-eslintrc",
   "version": "0.1.0",
   "description": "Shared ESLint 8 eslintrc config for projects on Node.js 12+.",
   "license": "UNLICENSED",

@@ -6,10 +6,10 @@ const prettierConfig = require('eslint-config-prettier');
  *
  * Extends the full Next stack, then turns off or relaxes noisy rules for old
  * codebases. Still requires Node >= 18.18 — for Node 12 use
- * `@hungvong/eslint-config-eslintrc/legacy` instead.
+ * `@tieuhungv/eslint-config-eslintrc/legacy` instead.
  *
  * Consumer usage:
- *   module.exports = [...require('@hungvong/eslint-config/legacy')];
+ *   module.exports = [...require('@tieuhungv/eslint-config/legacy')];
  */
 module.exports = [
   ...nextConfig,

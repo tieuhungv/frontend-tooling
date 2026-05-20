@@ -1,5 +1,5 @@
 {
-  "name": "@hungvong/eslint-config",
+  "name": "@tieuhungv/eslint-config",
   "version": "0.1.0",
   "description": "Shared ESLint flat config for JavaScript, TypeScript, React, and Next.js projects.",
   "license": "UNLICENSED",

@@ -7,7 +7,7 @@ const { reactRules } = require('./rules');
  * Includes TS + React + Hooks; use this for Vite/CRA/component libraries (not Next).
  *
  * Consumer usage:
- *   extends: ['@hungvong/eslint-config-eslintrc/react']
+ *   extends: ['@tieuhungv/eslint-config-eslintrc/react']
  */
 module.exports = {
   extends: [

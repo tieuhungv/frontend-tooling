@@ -1,10 +1,10 @@
-# @hungvong/eslint-config
+# @tieuhungv/eslint-config
 
 Shared **ESLint 9 flat config** for HV frontend projects.
 
 Use this package when the consumer repo runs **Node.js `>=18.18`** and **ESLint 9**
 with `eslint.config.js`. For Node `12.22`–`17.x`, use
-[`@hungvong/eslint-config-eslintrc`](../eslint-config-eslintrc) instead.
+[`@tieuhungv/eslint-config-eslintrc`](../eslint-config-eslintrc) instead.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ JavaScript-only repos do **not** need the `typescript` package installed.
 ## Install
 
 ```sh
-yarn add -D eslint @hungvong/eslint-config
+yarn add -D eslint @tieuhungv/eslint-config
 # if the repo has TypeScript sources:
 yarn add -D typescript
 ```
@@ -34,13 +34,13 @@ Bundled dependencies (no need to install separately): `@eslint/js`, `typescript-
 Pick **one** preset. Do not combine `react` and `next` — `next` already includes
 React and TypeScript layers.
 
-| Export                                 | Stack                                       |
-| -------------------------------------- | ------------------------------------------- |
-| `@hungvong/eslint-config` / `.../base` | JavaScript                                  |
-| `.../typescript`                       | base + TypeScript                           |
-| `.../react`                            | base + TypeScript + React + Hooks           |
-| `.../next`                             | base + TypeScript + React + Hooks + Next.js |
-| `.../legacy`                           | **next** + relaxed rules (migration only)   |
+| Export                                  | Stack                                       |
+| --------------------------------------- | ------------------------------------------- |
+| `@tieuhungv/eslint-config` / `.../base` | JavaScript                                  |
+| `.../typescript`                        | base + TypeScript                           |
+| `.../react`                             | base + TypeScript + React + Hooks           |
+| `.../next`                              | base + TypeScript + React + Hooks + Next.js |
+| `.../legacy`                            | **next** + relaxed rules (migration only)   |
 
 Rule details and comments: see source files in this package and
 [`../eslint-config-eslintrc/rules.js`](../eslint-config-eslintrc/rules.js) (aligned
@@ -51,7 +51,7 @@ baseline for the eslintrc stack).
 ### JavaScript
 
 ```js
-const baseConfig = require('@hungvong/eslint-config');
+const baseConfig = require('@tieuhungv/eslint-config');
 
 module.exports = [...baseConfig];
 ```
@@ -59,7 +59,7 @@ module.exports = [...baseConfig];
 ### TypeScript
 
 ```js
-module.exports = [...require('@hungvong/eslint-config/typescript')];
+module.exports = [...require('@tieuhungv/eslint-config/typescript')];
 ```
 
 Non-type-checked `@typescript-eslint` recommended rules by default. For
@@ -67,7 +67,7 @@ type-aware rules, append a block with `parserOptions.project`:
 
 ```js
 module.exports = [
-  ...require('@hungvong/eslint-config/typescript'),
+  ...require('@tieuhungv/eslint-config/typescript'),
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -83,7 +83,7 @@ module.exports = [
 ### React (not Next.js)
 
 ```js
-module.exports = [...require('@hungvong/eslint-config/react')];
+module.exports = [...require('@tieuhungv/eslint-config/react')];
 ```
 
 Includes TypeScript + React recommended + JSX runtime + React Hooks.
@@ -93,7 +93,7 @@ downgraded to **`warn`** for easier adoption.
 ### Next.js
 
 ```js
-module.exports = [...require('@hungvong/eslint-config/next')];
+module.exports = [...require('@tieuhungv/eslint-config/next')];
 ```
 
 Adds `@next/eslint-plugin-next` (recommended + core-web-vitals), mostly as warnings.
@@ -101,12 +101,12 @@ Adds `@next/eslint-plugin-next` (recommended + core-web-vitals), mostly as warni
 ### Legacy migration
 
 ```js
-module.exports = [...require('@hungvong/eslint-config/legacy')];
+module.exports = [...require('@tieuhungv/eslint-config/legacy')];
 ```
 
 Extends the full **next** preset, then disables or softens noisy rules. Still
 requires Node 18+ and ESLint 9 — for older Node use
-`@hungvong/eslint-config-eslintrc/legacy`.
+`@tieuhungv/eslint-config-eslintrc/legacy`.
 
 Not for greenfield projects.
 
@@ -114,7 +114,7 @@ Not for greenfield projects.
 
 ```js
 module.exports = [
-  ...require('@hungvong/eslint-config/next'),
+  ...require('@tieuhungv/eslint-config/next'),
   {
     files: ['src/generated/**'],
     rules: {
@@ -129,7 +129,7 @@ Extra globals:
 
 ```js
 module.exports = [
-  ...require('@hungvong/eslint-config'),
+  ...require('@tieuhungv/eslint-config'),
   {
     languageOptions: {
       globals: { __APP_VERSION__: 'readonly' },
@@ -142,7 +142,7 @@ Extra ignores:
 
 ```js
 module.exports = [
-  ...require('@hungvong/eslint-config'),
+  ...require('@tieuhungv/eslint-config'),
   { ignores: ['.vercel/**', 'storybook-static/**'] },
 ];
 ```
@@ -153,7 +153,7 @@ Install and configure separately:
 
 ```js
 // prettier.config.js
-module.exports = require('@hungvong/prettier-config');
+module.exports = require('@tieuhungv/prettier-config');
 ```
 
 This package already applies `eslint-config-prettier` at the end of each preset.
