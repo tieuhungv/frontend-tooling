@@ -1,0 +1,23 @@
+{
+  "name": "@hv/prettier-config",
+  "version": "0.1.0",
+  "description": "Shared Prettier configuration for HV frontend projects.",
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "type": "commonjs",
+  "files": [
+    "README.md",
+    "index.js",
+    "legacy.js"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./legacy": "./legacy.js"
+  },
+  "peerDependencies": {
+    "prettier": ">=2 <4"
+  },
+  "engines": {
+    "node": ">=12.22.0"
+  }
+}

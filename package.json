@@ -1,0 +1,26 @@
+{
+  "name": "frontend-tooling",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared frontend linting and formatting standards for JavaScript and TypeScript projects.",
+  "license": "UNLICENSED",
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@hv/eslint-config": "0.1.0",
+    "@hv/prettier-config": "0.1.0",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

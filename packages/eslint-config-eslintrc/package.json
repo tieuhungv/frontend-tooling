@@ -1,0 +1,47 @@
+{
+  "name": "@hv/eslint-config-eslintrc",
+  "version": "0.1.0",
+  "description": "Shared ESLint 8 eslintrc config for HV projects on Node.js 12+.",
+  "license": "UNLICENSED",
+  "main": "base.js",
+  "type": "commonjs",
+  "files": [
+    "README.md",
+    "rules.js",
+    "base.js",
+    "typescript.js",
+    "react.js",
+    "next.js",
+    "legacy.js"
+  ],
+  "exports": {
+    ".": "./base.js",
+    "./base": "./base.js",
+    "./typescript": "./typescript.js",
+    "./react": "./react.js",
+    "./next": "./next.js",
+    "./legacy": "./legacy.js"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint-config-next": "^13.5.11",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unused-imports": "^3.2.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0",
+    "typescript": ">=4.3.5 <6"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=12.22.0"
+  }
+}

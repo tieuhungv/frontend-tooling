@@ -1,0 +1,47 @@
+{
+  "name": "@hv/eslint-config",
+  "version": "0.1.0",
+  "description": "Shared ESLint flat config for HV JavaScript, TypeScript, React, and Next.js projects.",
+  "license": "UNLICENSED",
+  "main": "base.js",
+  "type": "commonjs",
+  "files": [
+    "README.md",
+    "base.js",
+    "react.js",
+    "next.js",
+    "typescript.js",
+    "legacy.js"
+  ],
+  "exports": {
+    ".": "./base.js",
+    "./base": "./base.js",
+    "./react": "./react.js",
+    "./next": "./next.js",
+    "./typescript": "./typescript.js",
+    "./legacy": "./legacy.js"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.4",
+    "@next/eslint-plugin-next": "^16.2.6",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "^17.6.0",
+    "typescript-eslint": "^8.59.4"
+  },
+  "peerDependencies": {
+    "eslint": ">=9 <10",
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
