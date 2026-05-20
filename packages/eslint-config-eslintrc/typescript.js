@@ -1,4 +1,4 @@
-const { typescriptRules } = require('./rules');
+const { typescriptRules, requireImportRules } = require('./rules');
 
 /**
  * TypeScript preset (ESLint 8 + eslintrc).
@@ -30,4 +30,12 @@ module.exports = {
 
   // Overrides and additions on top of recommended; see rules.js for each rule.
   rules: typescriptRules,
+
+  // Downgrade from recommended `error` for JS/TS (mirrors flat typescript preset).
+  overrides: [
+    {
+      files: ['**/*.{js,jsx,cjs,mjs,ts,tsx,mts,cts}'],
+      rules: requireImportRules,
+    },
+  ],
 };

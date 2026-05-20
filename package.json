@@ -1,6 +1,6 @@
 {
   "name": "frontend-tooling",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Shared frontend linting and formatting standards for JavaScript and TypeScript projects.",
   "license": "UNLICENSED",
@@ -15,7 +15,7 @@
     "publish:packages": "npm publish -w packages/prettier-config && npm publish -w packages/eslint-config && npm publish -w packages/eslint-config-eslintrc"
   },
   "devDependencies": {
-    "@tieuhungv/eslint-config": "0.1.0",
+    "@tieuhungv/eslint-config": "0.1.1",
     "@tieuhungv/prettier-config": "0.1.0",
     "eslint": "^9.39.4",
     "prettier": "^3.8.3",

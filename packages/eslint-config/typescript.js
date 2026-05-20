@@ -17,6 +17,14 @@ module.exports = [
   // @typescript-eslint flat recommended rules (no type information required).
   ...tseslint.configs.recommended,
 
+  // Downgrade from recommended `error` for JS/TS (recommended applies to all files).
+  {
+    files: ['**/*.{js,jsx,cjs,mjs,ts,tsx,mts,cts}'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'warn',
+    },
+  },
+
   {
     files: ['**/*.{ts,tsx,mts,cts}'],
 
@@ -55,7 +63,6 @@ module.exports = [
 
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'warn',
-      '@typescript-eslint/no-require-imports': 'warn',
 
       '@typescript-eslint/no-unused-vars': [
         'warn',

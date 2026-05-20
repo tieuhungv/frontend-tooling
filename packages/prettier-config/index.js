@@ -20,7 +20,7 @@ module.exports = {
   trailingComma: 'all',
 
   // Soft-wrap lines longer than this column count.
-  printWidth: 100,
+  printWidth: 120,
 
   // Spaces per indentation level.
   tabWidth: 2,

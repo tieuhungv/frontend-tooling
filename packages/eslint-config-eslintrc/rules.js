@@ -64,6 +64,14 @@ const baseRules = {
   'import/no-unresolved': 'off',
 };
 
+/**
+ * Warn on `require()` in JS/TS. Flat stack uses `@typescript-eslint/no-require-imports`.
+ * Applied via `overrides` in typescript.js so `.js` / `.jsx` are covered, not only `.ts`.
+ */
+const requireImportRules = {
+  '@typescript-eslint/no-var-requires': 'warn',
+};
+
 /** TypeScript-specific rules (ESLint 8 uses @typescript-eslint v5 rule names). */
 const typescriptRules = {
   // Let @typescript-eslint handle unused vars for .ts files.
@@ -95,9 +103,6 @@ const typescriptRules = {
   // Warn on `foo!` non-null assertions.
   '@typescript-eslint/no-non-null-assertion': 'warn',
 
-  // Discourage `require()` in TS files (use ESM import).
-  '@typescript-eslint/no-var-requires': 'warn',
-
   // TypeScript-aware unused variables (replaces core `no-unused-vars` for .ts files).
   '@typescript-eslint/no-unused-vars': [
     'warn',
@@ -117,6 +122,20 @@ const reactRules = {
 
   // Off with React 17+ JSX transform: no need to `import React` in every file.
   'react/react-in-jsx-scope': 'off',
+
+  // Off: allow apostrophes/quotes in JSX text (e.g. "don't", "it's").
+  'react/no-unescaped-entities': 'off',
+
+  // Error on invalid DOM props; ignore styling-library props (see flat react.js).
+  'react/no-unknown-property': [
+    'error',
+    {
+      ignore: [
+        'css', // Emotion / styled-components `css` prop.
+        'tw', // twin.macro `tw` prop.
+      ],
+    },
+  ],
 
   // Off with automatic JSX runtime.
   'react/jsx-uses-react': 'off',
@@ -153,7 +172,7 @@ const legacyRules = {
   '@typescript-eslint/ban-ts-comment': 'off', // Allow any `// @ts-*` without restrictions.
   '@typescript-eslint/no-explicit-any': 'off', // Allow `any` without warnings.
   '@typescript-eslint/no-non-null-assertion': 'off', // Allow `value!` assertions.
-  '@typescript-eslint/no-var-requires': 'off', // Allow `require()` in TS files.
+  '@typescript-eslint/no-var-requires': 'off', // Allow `require()` in JS/TS (flat: no-require-imports).
 
   // --- Imports: stop flagging duplicate/unused imports during large refactors ---
   'import/no-duplicates': 'off',
@@ -180,6 +199,7 @@ const ignorePatterns = [
 
 module.exports = {
   baseRules,
+  requireImportRules,
   typescriptRules,
   reactRules,
   nextRules,
