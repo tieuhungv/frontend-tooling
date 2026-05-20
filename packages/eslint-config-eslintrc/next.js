@@ -7,7 +7,7 @@ const { nextRules } = require('./rules');
  * Use this for Next.js apps on Node 12.22+; do not also extend `react` separately.
  *
  * Consumer usage:
- *   extends: ['@hv/eslint-config-eslintrc/next']
+ *   extends: ['@hungvong/eslint-config-eslintrc/next']
  */
 module.exports = {
   extends: [

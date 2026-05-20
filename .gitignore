@@ -18,6 +18,10 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+.npmrc
+
+# npm pack output
+*.tgz
 
 # Editor and OS files
 .DS_Store

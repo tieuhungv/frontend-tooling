@@ -8,7 +8,7 @@ const globals = require('globals');
  * Base JavaScript preset (ESLint 9 flat config).
  *
  * Consumer usage:
- *   const base = require('@hv/eslint-config');
+ *   const base = require('@hungvong/eslint-config');
  *   module.exports = [...base];
  *
  * Requires Node >= 18.18 and `eslint@9` in the consuming repo.

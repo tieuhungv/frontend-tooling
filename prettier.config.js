@@ -1,1 +1,1 @@
-module.exports = require('@hv/prettier-config');
+module.exports = require('@hungvong/prettier-config');

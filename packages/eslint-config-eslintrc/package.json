@@ -1,8 +1,16 @@
 {
-  "name": "@hv/eslint-config-eslintrc",
+  "name": "@hungvong/eslint-config-eslintrc",
   "version": "0.1.0",
-  "description": "Shared ESLint 8 eslintrc config for HV projects on Node.js 12+.",
+  "description": "Shared ESLint 8 eslintrc config for projects on Node.js 12+.",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tieuhungv/frontend-tooling.git",
+    "directory": "packages/eslint-config-eslintrc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "base.js",
   "type": "commonjs",
   "files": [

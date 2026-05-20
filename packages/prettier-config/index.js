@@ -1,5 +1,5 @@
 /**
- * Default Prettier options for HV frontend repositories.
+ * Default Prettier rules for frontend repositories.
  *
  * Prettier owns formatting; ESLint should not enforce style rules that conflict
  * with these settings (use eslint-config-prettier in ESLint packages).

@@ -9,7 +9,7 @@ const tseslint = require('typescript-eslint');
  * For type-aware rules, append a consumer block with `parserOptions.project`.
  *
  * Consumer usage:
- *   module.exports = [...require('@hv/eslint-config/typescript')];
+ *   module.exports = [...require('@hungvong/eslint-config/typescript')];
  */
 module.exports = [
   ...baseConfig,

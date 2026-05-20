@@ -4,7 +4,7 @@ const { baseRules, ignorePatterns } = require('./rules');
  * Base JavaScript preset (ESLint 8 + eslintrc).
  *
  * Consumer usage:
- *   module.exports = { extends: ['@hv/eslint-config-eslintrc'] };
+ *   module.exports = { extends: ['@hungvong/eslint-config-eslintrc'] };
  *
  * Requires Node >= 12.22 and `eslint@8` in the consuming repo.
  */

@@ -10,11 +10,11 @@ where needed.
 
 ## Packages
 
-| Package                                                           | Purpose                  | Config file          | Node (consumer repo)               |
-| ----------------------------------------------------------------- | ------------------------ | -------------------- | ---------------------------------- |
-| [`@hv/prettier-config`](./packages/prettier-config)               | Formatting rules         | `prettier.config.js` | `>=12.22` (use Prettier 2 on 12.x) |
-| [`@hv/eslint-config`](./packages/eslint-config)                   | ESLint 9 **flat** config | `eslint.config.js`   | `>=18.18`                          |
-| [`@hv/eslint-config-eslintrc`](./packages/eslint-config-eslintrc) | ESLint 8 **eslintrc**    | `.eslintrc.cjs`      | `>=12.22`                          |
+| Package                                                                 | Purpose                  | Config file          | Node (consumer repo)               |
+| ----------------------------------------------------------------------- | ------------------------ | -------------------- | ---------------------------------- |
+| [`@hungvong/prettier-config`](./packages/prettier-config)               | Formatting rules         | `prettier.config.js` | `>=12.22` (use Prettier 2 on 12.x) |
+| [`@hungvong/eslint-config`](./packages/eslint-config)                   | ESLint 9 **flat** config | `eslint.config.js`   | `>=18.18`                          |
+| [`@hungvong/eslint-config-eslintrc`](./packages/eslint-config-eslintrc) | ESLint 8 **eslintrc**    | `.eslintrc.cjs`      | `>=12.22`                          |
 
 ```text
 frontend-tooling/
@@ -30,10 +30,10 @@ imports, unused code, React/Next conventions. Both ESLint packages include
 
 ## Choosing ESLint package
 
-| Your repo                     | Install                      | Extend / require                                                                                   |
-| ----------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------- |
-| Node `>=18.18`, ESLint 9      | `@hv/eslint-config`          | `eslint.config.js` — see [eslint-config README](./packages/eslint-config/README.md)                |
-| Node `12.22`–`17.x`, ESLint 8 | `@hv/eslint-config-eslintrc` | `.eslintrc.cjs` — see [eslint-config-eslintrc README](./packages/eslint-config-eslintrc/README.md) |
+| Your repo                     | Install                            | Extend / require                                                                                   |
+| ----------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Node `>=18.18`, ESLint 9      | `@hungvong/eslint-config`          | `eslint.config.js` — see [eslint-config README](./packages/eslint-config/README.md)                |
+| Node `12.22`–`17.x`, ESLint 8 | `@hungvong/eslint-config-eslintrc` | `.eslintrc.cjs` — see [eslint-config-eslintrc README](./packages/eslint-config-eslintrc/README.md) |
 
 Do **not** install both ESLint packages in one repo. Pick one stack based on Node
 and ESLint version.
@@ -42,32 +42,32 @@ and ESLint version.
 
 You only need **one** preset per repo. Higher presets include lower layers.
 
-### ESLint 9 (`@hv/eslint-config`)
+### ESLint 9 (`@hungvong/eslint-config`)
 
 ```text
 base  →  typescript  →  react  →  next  →  legacy
          (JS only)      (+TS)    (+React) (+Next) (softer rules)
 ```
 
-| Preset                           | Use for                                                 |
-| -------------------------------- | ------------------------------------------------------- |
-| `@hv/eslint-config` / `.../base` | JavaScript only                                         |
-| `.../typescript`                 | TypeScript (no React)                                   |
-| `.../react`                      | React + TypeScript (not Next.js)                        |
-| `.../next`                       | **Next.js** (includes React + TS)                       |
-| `.../legacy`                     | Large old codebase; extends **next** with relaxed rules |
+| Preset                                 | Use for                                                 |
+| -------------------------------------- | ------------------------------------------------------- |
+| `@hungvong/eslint-config` / `.../base` | JavaScript only                                         |
+| `.../typescript`                       | TypeScript (no React)                                   |
+| `.../react`                            | React + TypeScript (not Next.js)                        |
+| `.../next`                             | **Next.js** (includes React + TS)                       |
+| `.../legacy`                           | Large old codebase; extends **next** with relaxed rules |
 
-### ESLint 8 (`@hv/eslint-config-eslintrc`)
+### ESLint 8 (`@hungvong/eslint-config-eslintrc`)
 
 Same idea via `extends`:
 
-| Preset                       | Use for                          |
-| ---------------------------- | -------------------------------- |
-| `@hv/eslint-config-eslintrc` | JavaScript only                  |
-| `.../typescript`             | TypeScript (no React)            |
-| `.../react`                  | React + TypeScript (not Next.js) |
-| `.../next`                   | **Next.js**                      |
-| `.../legacy`                 | Softer rules; extends **next**   |
+| Preset                             | Use for                          |
+| ---------------------------------- | -------------------------------- |
+| `@hungvong/eslint-config-eslintrc` | JavaScript only                  |
+| `.../typescript`                   | TypeScript (no React)            |
+| `.../react`                        | React + TypeScript (not Next.js) |
+| `.../next`                         | **Next.js**                      |
+| `.../legacy`                       | Softer rules; extends **next**   |
 
 **Do not** combine `react` + `next` — use `next` alone for Next.js apps.
 
@@ -76,19 +76,19 @@ Same idea via `extends`:
 ### Modern repo (Node 18+, ESLint 9)
 
 ```sh
-yarn add -D eslint prettier@3 @hv/eslint-config @hv/prettier-config
+yarn add -D eslint prettier@3 @hungvong/eslint-config @hungvong/prettier-config
 # If the repo has .ts / .tsx files:
 yarn add -D typescript
 ```
 
 ```js
 // prettier.config.js
-module.exports = require('@hv/prettier-config');
+module.exports = require('@hungvong/prettier-config');
 ```
 
 ```js
 // eslint.config.js — example: Next.js
-const nextConfig = require('@hv/eslint-config/next');
+const nextConfig = require('@hungvong/eslint-config/next');
 
 module.exports = [...nextConfig];
 ```
@@ -96,19 +96,19 @@ module.exports = [...nextConfig];
 ### Legacy repo (Node 12.22+, ESLint 8)
 
 ```sh
-yarn add -D eslint@8 prettier@2 @hv/eslint-config-eslintrc @hv/prettier-config
+yarn add -D eslint@8 prettier@2 @hungvong/eslint-config-eslintrc @hungvong/prettier-config
 yarn add -D typescript   # if using .ts / .tsx
 ```
 
 ```js
 // prettier.config.js
-module.exports = require('@hv/prettier-config');
+module.exports = require('@hungvong/prettier-config');
 ```
 
 ```js
 // .eslintrc.cjs — example: Next.js + TypeScript
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc/next'],
+  extends: ['@hungvong/eslint-config-eslintrc/next'],
 };
 ```
 
@@ -121,12 +121,39 @@ module.exports = {
 }
 ```
 
-## Private registry
+## GitHub Packages
+
+Packages are published under scope **`@hungvong`** to
+[GitHub Packages](https://github.com/tieuhungv/frontend-tooling/packages).
+
+### Install in another repo
+
+1. Create a [GitHub PAT](https://github.com/settings/tokens) with `read:packages`.
+2. Add `.npmrc` (see [`.npmrc.example`](./.npmrc.example)):
 
 ```ini
-# .npmrc
-@hv:registry=https://registry.example.com
+@hungvong:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
+
+3. Install:
+
+```sh
+export GITHUB_TOKEN=ghp_...
+yarn add -D @hungvong/prettier-config @hungvong/eslint-config
+```
+
+### Publish from this monorepo
+
+1. PAT needs `write:packages` and `read:packages`.
+2. Copy `.npmrc.example` → `.npmrc` and set `GITHUB_TOKEN`.
+3. Bump `version` in each `packages/*/package.json`, then:
+
+```sh
+yarn publish:packages
+```
+
+Or publish one package: `npm publish -w packages/prettier-config`.
 
 ## Repo-level overrides
 
@@ -134,7 +161,7 @@ Append overrides **after** the shared config so exceptions stay visible:
 
 ```js
 // eslint.config.js (flat)
-const nextConfig = require('@hv/eslint-config/next');
+const nextConfig = require('@hungvong/eslint-config/next');
 
 module.exports = [
   ...nextConfig,
@@ -150,7 +177,7 @@ module.exports = [
 ```js
 // .eslintrc.cjs (ESLint 8)
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc/next'],
+  extends: ['@hungvong/eslint-config-eslintrc/next'],
   overrides: [
     {
       files: ['src/generated/**'],
@@ -186,7 +213,7 @@ per repo once the baseline is clean. ESLint 8 repos often need `--ext .js,.jsx,.
 ```
 
 Use `"eslint.useFlatConfig": true` only when the repo uses `eslint.config.js`
-(`@hv/eslint-config`). For `.eslintrc.cjs`, omit that setting.
+(`@hungvong/eslint-config`). For `.eslintrc.cjs`, omit that setting.
 
 ## Developing this monorepo
 
@@ -197,6 +224,9 @@ yarn install
 yarn format:check
 yarn lint
 ```
+
+To publish all workspace packages to GitHub Packages, configure `.npmrc` (from
+[`.npmrc.example`](./.npmrc.example)) and run `yarn publish:packages`.
 
 Package-specific details: [prettier-config](./packages/prettier-config/README.md) ·
 [eslint-config](./packages/eslint-config/README.md) ·

@@ -28,7 +28,7 @@ const downgradeErrorsToWarnings = (rules) =>
  * Includes JS/TS/React/Next rules — consumer should only spread this preset, not `react`.
  *
  * Consumer usage:
- *   module.exports = [...require('@hv/eslint-config/next')];
+ *   module.exports = [...require('@hungvong/eslint-config/next')];
  */
 module.exports = [
   ...reactConfig,

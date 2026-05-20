@@ -1,10 +1,10 @@
-# @hv/eslint-config-eslintrc
+# @hungvong/eslint-config-eslintrc
 
 Shared **ESLint 8** config for **`.eslintrc.cjs`** / **`.eslintrc.js`** on
 **Node.js `>=12.22`**.
 
 Use when the consumer repo cannot run ESLint 9 yet. When the repo reaches
-**Node `>=18.18`**, migrate to [`@hv/eslint-config`](../eslint-config) (flat config)
+**Node `>=18.18`**, migrate to [`@hungvong/eslint-config`](../eslint-config) (flat config)
 for newer plugins and long-term support.
 
 ## Requirements
@@ -19,13 +19,13 @@ for newer plugins and long-term support.
 ## Install
 
 ```sh
-yarn add -D eslint@8 @hv/eslint-config-eslintrc
+yarn add -D eslint@8 @hungvong/eslint-config-eslintrc
 ```
 
 With TypeScript sources:
 
 ```sh
-yarn add -D eslint@8 typescript @hv/eslint-config-eslintrc
+yarn add -D eslint@8 typescript @hungvong/eslint-config-eslintrc
 ```
 
 Bundled: `@typescript-eslint/eslint-plugin` / `parser` v5, `eslint-plugin-react`,
@@ -36,13 +36,13 @@ Bundled: `@typescript-eslint/eslint-plugin` / `parser` v5, `eslint-plugin-react`
 
 Use **one** `extends` entry. Do not list both `react` and `next`.
 
-| `extends`                    | Includes                          |
-| ---------------------------- | --------------------------------- |
-| `@hv/eslint-config-eslintrc` | JavaScript (base)                 |
-| `.../typescript`             | base + TypeScript                 |
-| `.../react`                  | base + TypeScript + React + Hooks |
-| `.../next`                   | above + `next/core-web-vitals`    |
-| `.../legacy`                 | **next** + relaxed rules          |
+| `extends`                          | Includes                          |
+| ---------------------------------- | --------------------------------- |
+| `@hungvong/eslint-config-eslintrc` | JavaScript (base)                 |
+| `.../typescript`                   | base + TypeScript                 |
+| `.../react`                        | base + TypeScript + React + Hooks |
+| `.../next`                         | above + `next/core-web-vitals`    |
+| `.../legacy`                       | **next** + relaxed rules          |
 
 Per-rule comments: [`rules.js`](./rules.js).
 
@@ -53,7 +53,7 @@ Per-rule comments: [`rules.js`](./rules.js).
 ```js
 // .eslintrc.cjs
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc'],
+  extends: ['@hungvong/eslint-config-eslintrc'],
 };
 ```
 
@@ -61,7 +61,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc/typescript'],
+  extends: ['@hungvong/eslint-config-eslintrc/typescript'],
 };
 ```
 
@@ -69,7 +69,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc/react'],
+  extends: ['@hungvong/eslint-config-eslintrc/react'],
 };
 ```
 
@@ -77,7 +77,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc/next'],
+  extends: ['@hungvong/eslint-config-eslintrc/next'],
 };
 ```
 
@@ -85,7 +85,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc/legacy'],
+  extends: ['@hungvong/eslint-config-eslintrc/legacy'],
 };
 ```
 
@@ -110,7 +110,7 @@ ESLint 8 often needs explicit extensions:
 
 ```js
 module.exports = {
-  extends: ['@hv/eslint-config-eslintrc/react'],
+  extends: ['@hungvong/eslint-config-eslintrc/react'],
   rules: {
     'no-console': 'off',
   },
@@ -127,23 +127,23 @@ module.exports = {
 
 ```sh
 # Node 12.22+
-yarn add -D prettier@2 @hv/prettier-config
+yarn add -D prettier@2 @hungvong/prettier-config
 ```
 
 ```js
 // prettier.config.js
-module.exports = require('@hv/prettier-config');
+module.exports = require('@hungvong/prettier-config');
 ```
 
-## Comparison with `@hv/eslint-config`
+## Comparison with `@hungvong/eslint-config`
 
-|                     | `@hv/eslint-config-eslintrc` | `@hv/eslint-config`        |
-| ------------------- | ---------------------------- | -------------------------- |
-| ESLint              | 8                            | 9                          |
-| Config              | `.eslintrc.cjs`              | `eslint.config.js`         |
-| Min Node            | 12.22                        | 18.18                      |
-| TypeScript ESLint   | v5 (`@typescript-eslint/*`)  | v8 (`typescript-eslint`)   |
-| Next.js integration | `eslint-config-next@13`      | `@next/eslint-plugin-next` |
+|                     | `@hungvong/eslint-config-eslintrc` | `@hungvong/eslint-config`  |
+| ------------------- | ---------------------------------- | -------------------------- |
+| ESLint              | 8                                  | 9                          |
+| Config              | `.eslintrc.cjs`                    | `eslint.config.js`         |
+| Min Node            | 12.22                              | 18.18                      |
+| TypeScript ESLint   | v5 (`@typescript-eslint/*`)        | v8 (`typescript-eslint`)   |
+| Next.js integration | `eslint-config-next@13`            | `@next/eslint-plugin-next` |
 
 Rule intent is aligned between both packages to simplify Node/ESLint upgrades.
 

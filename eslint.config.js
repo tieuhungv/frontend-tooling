@@ -1,3 +1,3 @@
-const baseConfig = require('@hv/eslint-config');
+const baseConfig = require('@hungvong/eslint-config');
 
 module.exports = [...baseConfig];

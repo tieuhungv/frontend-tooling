@@ -8,7 +8,7 @@ const { typescriptRules } = require('./rules');
  * consuming repo if you need rules like `no-floating-promises`.
  *
  * Consumer usage:
- *   extends: ['@hv/eslint-config-eslintrc/typescript']
+ *   extends: ['@hungvong/eslint-config-eslintrc/typescript']
  */
 module.exports = {
   extends: [

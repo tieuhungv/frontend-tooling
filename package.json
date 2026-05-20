@@ -11,11 +11,12 @@
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "publish:packages": "npm publish -w packages/prettier-config && npm publish -w packages/eslint-config && npm publish -w packages/eslint-config-eslintrc"
   },
   "devDependencies": {
-    "@hv/eslint-config": "0.1.0",
-    "@hv/prettier-config": "0.1.0",
+    "@hungvong/eslint-config": "0.1.0",
+    "@hungvong/prettier-config": "0.1.0",
     "eslint": "^9.39.4",
     "prettier": "^3.8.3",
     "typescript": "^6.0.3"

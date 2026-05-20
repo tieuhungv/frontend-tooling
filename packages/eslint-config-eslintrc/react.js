@@ -7,11 +7,11 @@ const { reactRules } = require('./rules');
  * Includes TS + React + Hooks; use this for Vite/CRA/component libraries (not Next).
  *
  * Consumer usage:
- *   extends: ['@hv/eslint-config-eslintrc/react']
+ *   extends: ['@hungvong/eslint-config-eslintrc/react']
  */
 module.exports = {
   extends: [
-    require.resolve('./typescript'), // HV base + TypeScript rules.
+    require.resolve('./typescript'), // Base + TypeScript rules.
     'plugin:react/recommended', // React best practices (severity tuned in `rules`).
     'plugin:react/jsx-runtime', // React 17+ automatic JSX runtime (no React import).
     'plugin:react-hooks/recommended', // Rules of Hooks + exhaustive-deps defaults.

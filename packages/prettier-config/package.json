@@ -1,8 +1,16 @@
 {
-  "name": "@hv/prettier-config",
+  "name": "@hungvong/prettier-config",
   "version": "0.1.0",
-  "description": "Shared Prettier configuration for HV frontend projects.",
+  "description": "Shared Prettier configuration for frontend projects.",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tieuhungv/frontend-tooling.git",
+    "directory": "packages/prettier-config"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "index.js",
   "type": "commonjs",
   "files": [

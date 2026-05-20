@@ -1,8 +1,16 @@
 {
-  "name": "@hv/eslint-config",
+  "name": "@hungvong/eslint-config",
   "version": "0.1.0",
-  "description": "Shared ESLint flat config for HV JavaScript, TypeScript, React, and Next.js projects.",
+  "description": "Shared ESLint flat config for JavaScript, TypeScript, React, and Next.js projects.",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tieuhungv/frontend-tooling.git",
+    "directory": "packages/eslint-config"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "base.js",
   "type": "commonjs",
   "files": [

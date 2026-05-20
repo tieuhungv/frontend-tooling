@@ -9,7 +9,7 @@ const { legacyRules } = require('./rules');
  * Still requires Node >= 12.22 and ESLint 8 — this is not an older ESLint format.
  *
  * Consumer usage:
- *   extends: ['@hv/eslint-config-eslintrc/legacy']
+ *   extends: ['@hungvong/eslint-config-eslintrc/legacy']
  */
 module.exports = {
   // Inherits: base → typescript → react → next → next/core-web-vitals.

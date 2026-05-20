@@ -1,10 +1,10 @@
 /**
- * Shared ESLint rule definitions for @hv/eslint-config-eslintrc (ESLint 8).
+ * Shared ESLint rule definitions for @hungvong/eslint-config-eslintrc (ESLint 8).
  *
  * Rule severity: 'off' | 'warn' | 'error'. Most rules use 'warn' for easier
  * adoption in large repos; fix or tighten per-repo over time.
  *
- * Aligned with @hv/eslint-config (flat) where the rule exists in both stacks.
+ * Aligned with @hungvong/eslint-config (flat) where the rule exists in both stacks.
  */
 
 /** Core JavaScript rules applied in the base preset. */

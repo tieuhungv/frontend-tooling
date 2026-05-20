@@ -1,4 +1,4 @@
-# @hv/prettier-config
+# @hungvong/prettier-config
 
 Shared [Prettier](https://prettier.io/) options for HV frontend projects.
 
@@ -26,20 +26,20 @@ you install in the consumer repo determines the minimum Node version:
 
 ```sh
 # Node 12.22+
-yarn add -D prettier@2 @hv/prettier-config
+yarn add -D prettier@2 @hungvong/prettier-config
 
 # Node 14+
-yarn add -D prettier@3 @hv/prettier-config
+yarn add -D prettier@3 @hungvong/prettier-config
 ```
 
 Pair with ESLint on older Node using
-[`@hv/eslint-config-eslintrc`](../eslint-config-eslintrc) and `eslint@8`.
+[`@hungvong/eslint-config-eslintrc`](../eslint-config-eslintrc) and `eslint@8`.
 
 ## Usage
 
 ```js
 // prettier.config.js
-module.exports = require('@hv/prettier-config');
+module.exports = require('@hungvong/prettier-config');
 ```
 
 ```json
@@ -53,10 +53,10 @@ module.exports = require('@hv/prettier-config');
 
 ## Exports
 
-| Import                       | Description                                                   |
-| ---------------------------- | ------------------------------------------------------------- |
-| `@hv/prettier-config`        | Default options ([`index.js`](./index.js))                    |
-| `@hv/prettier-config/legacy` | Default + `trailingComma: 'es5'` ([`legacy.js`](./legacy.js)) |
+| Import                             | Description                                                   |
+| ---------------------------------- | ------------------------------------------------------------- |
+| `@hungvong/prettier-config`        | Default options ([`index.js`](./index.js))                    |
+| `@hungvong/prettier-config/legacy` | Default + `trailingComma: 'es5'` ([`legacy.js`](./legacy.js)) |
 
 ### Default options (summary)
 
@@ -76,7 +76,7 @@ See inline comments in [`index.js`](./index.js) for each option.
 ### Legacy profile
 
 ```js
-module.exports = require('@hv/prettier-config/legacy');
+module.exports = require('@hungvong/prettier-config/legacy');
 ```
 
 Only changes `trailingComma` to `'es5'` (no trailing comma after function parameters).
@@ -86,7 +86,7 @@ Node 12 vs 18.
 ## Repo-level overrides
 
 ```js
-const prettierConfig = require('@hv/prettier-config');
+const prettierConfig = require('@hungvong/prettier-config');
 
 module.exports = {
   ...prettierConfig,

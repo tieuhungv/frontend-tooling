@@ -27,10 +27,10 @@ const downgradeErrorsToWarnings = (rules) =>
  * React + TypeScript preset (ESLint 9 flat config).
  *
  * Extends: typescript preset + React + JSX runtime + React Hooks.
- * Use for React apps without Next.js. For Next.js use `@hv/eslint-config/next`.
+ * Use for React apps without Next.js. For Next.js use `@hungvong/eslint-config/next`.
  *
  * Consumer usage:
- *   module.exports = [...require('@hv/eslint-config/react')];
+ *   module.exports = [...require('@hungvong/eslint-config/react')];
  */
 module.exports = [
   ...typescriptConfig,
